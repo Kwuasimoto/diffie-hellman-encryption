@@ -59,7 +59,8 @@ describe("AES-256-GCM With Diffie-Hellman Keys |", () => {
     })
 
     test("Find 32-byte prime/generator combinations w/ hex encoding", () => {
-        expect(findDiffieHellmanPrimeForByteLength(32)).toEqual({'251': 32})
+        const length = 32
+        expect(findDiffieHellmanPrimeForByteLength(length)).toEqual({[prime]: length})
     })
 
     test("Compare Secrets", () => {
