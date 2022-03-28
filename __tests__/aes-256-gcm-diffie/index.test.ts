@@ -104,7 +104,7 @@ describe("AES-256-GCM With Diffie-Hellman Keys |", () => {
      * __________ PAYLOAD __________
      */
 
-    test("Build Payload", () => {
+    test("Check Payload", () => {
         expect(payload).toBeDefined()
         expect(payload).toHaveLength(122)
     })
