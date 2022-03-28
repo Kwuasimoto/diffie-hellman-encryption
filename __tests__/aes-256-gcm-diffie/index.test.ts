@@ -58,7 +58,7 @@ describe("AES-256-GCM With Diffie-Hellman Keys |", () => {
         payload = Buffer.from(IV.toString("hex") + encrypted + authTag)
     })
 
-    test("Find 32-byte prime/generator combinations w/ hex encoding", () => {
+    test("Find 32-byte prime for hex encoding", () => {
         const length = 32
         expect(findDiffieHellmanPrimeForByteLength(length)).toEqual({[prime]: length})
     })
