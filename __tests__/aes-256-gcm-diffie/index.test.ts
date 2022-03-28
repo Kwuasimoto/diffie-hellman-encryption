@@ -1,7 +1,7 @@
 import crypto, {CipherCCM, DiffieHellman} from "crypto"
 import findDiffieHellmanPrimeForByteLength from "../util/findDiffieHellmanPrimeForByteLength";
 
-describe("Diffie-Hellman Keys |", () => {
+describe("AES-256-GCM With Diffie-Hellman Keys |", () => {
 
     /**
      * Diffie Hellman
