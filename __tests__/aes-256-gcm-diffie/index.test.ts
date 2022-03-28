@@ -47,7 +47,7 @@ describe("Diffie-Hellman Keys |", () => {
          * Setup AES-256-GCM Cipheriv
          */
 
-        IV = crypto.randomBytes(16)
+        IV = crypto.randomBytes(24)
         serverCipher = crypto.createCipheriv("aes-256-gcm", keyRing["serverShared"], IV)
 
         encrypted = serverCipher.update(message, "utf8", "hex")
@@ -94,7 +94,7 @@ describe("Diffie-Hellman Keys |", () => {
             length: authTag.length
         }])
 
-        expect(hexIV).toHaveLength(32)
+        expect(hexIV).toHaveLength(48)
         expect(encrypted).toHaveLength(42)
         expect(authTag).toHaveLength(32)
     })
@@ -104,8 +104,6 @@ describe("Diffie-Hellman Keys |", () => {
      */
 
     test("Build Payload", () => {
-        payload = Buffer.from(IV.toString("hex") + encrypted + authTag)
-
         expect(payload).toBeDefined()
         expect(payload).toHaveLength(122)
     })
